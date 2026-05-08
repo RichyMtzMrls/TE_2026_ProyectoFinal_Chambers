@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  db:
+    image: mariadb:10.11
+    container_name: db_servicio_social
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: servicio_social_db
+      MYSQL_USER: admin_bd
+      MYSQL_PASSWORD: 1379
+    ports:
+      - "3306:3306"
+    volumes:
+      - mariadb_data:/var/lib/mysql
+  backend-api:
+    build: ./h_de_ss_b
+    container_name: api_servicio_social
+    restart: on-failure
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mariadb://db:3306/servicio_social_db
+      - SPRING_DATASOURCE_USERNAME=admin_bd
+      - SPRING_DATASOURCE_PASSWORD=1379
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+  frontend-mvc:
+    build: ./h_de_ss_f
+    container_name: web_servicio_social
+    restart: on-failure
+    ports:
+      - "8081:8080"
+    depends_on:
+      - backend-api
+    environment:
+      - API_BASE_URL=http://backend-api:8080
+
+volumes:
+  mariadb_data:
