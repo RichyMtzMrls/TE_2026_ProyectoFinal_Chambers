@@ -34,11 +34,10 @@ public class ProgramaServicioSocial {
 
     @Column(nullable = false, length = 20)
     private String estado; 
-    // --- Relaciones ---
-    // Requerimiento: Profesor o profesores asignados (Relación Muchos a Muchos o Uno a Muchos dependiendo de tu diseño)
-    // Dejaremos esto pendiente hasta crear la entidad Profesor, pero aquí iría la anotación de relación, por ejemplo:
-    // @ManyToOne
-    // @JoinColumn(name = "profesor_id")
-    // private Profesor profesorAsignado;
+    
+    @ManyToOne
+    @JoinColumn(name = "id_profesor")
+    private Profesor profesorResponsable;
 
+    
 }

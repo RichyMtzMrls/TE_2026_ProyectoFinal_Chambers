@@ -1,5 +1,4 @@
 package mx.unam.aragon.ico.te.h_de_ss_b.Modelo;
-
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -28,8 +27,8 @@ public class RegistroHoras {
     @Column(name = "actividades_realizadas", columnDefinition = "TEXT")
     private String actividadesRealizadas; 
 
-    @Column(name = "horas_calculadas")
-    private Double horasCalculadas; 
+    @Column(name = "horas_calculadas", length = 10)
+    private String horasCalculadas;
 
     @Column(name = "estado_registro", nullable = false, length = 20)
     private String estadoRegistro; 

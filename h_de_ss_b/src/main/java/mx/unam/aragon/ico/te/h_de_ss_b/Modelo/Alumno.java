@@ -1,5 +1,4 @@
 package mx.unam.aragon.ico.te.h_de_ss_b.Modelo;
-
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -37,8 +36,8 @@ public class Alumno {
     @Column(nullable = false)
     private String estado;
 
-    @Column(name = "horas_acumuladas")
-    private Integer horasAcumuladas = 0; 
+    @Column(name = "horas_acumuladas", length = 10)
+    private String horasAcumuladas = "0:00";
 
     @ManyToOne
     @JoinColumn(name = "id_programa", nullable = false)
