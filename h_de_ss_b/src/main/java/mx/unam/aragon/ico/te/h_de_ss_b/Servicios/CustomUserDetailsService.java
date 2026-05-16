@@ -17,11 +17,11 @@ public class CustomUserDetailsService implements UserDetailsService {
     private UsuarioRepository usuarioRepository;
 
     @Override
-    public UserDetails loadUserByUsername(String correo) throws UsernameNotFoundException {
-        Usuario usuario = usuarioRepository.findByCorreo(correo)
-                .orElseThrow(() -> new UsernameNotFoundException("El correo " + correo + " no existe."));
+    public UserDetails loadUserByUsername(String numero) throws UsernameNotFoundException {
+        Usuario usuario = usuarioRepository.findByNumero(numero)
+                .orElseThrow(() -> new UsernameNotFoundException("El número " + numero + " no existe."));
         return new User(
-                usuario.getCorreo(),
+                usuario.getNumero(),
                 usuario.getPassword(),
                 Collections.singletonList(new SimpleGrantedAuthority(usuario.getRol().name()))
         );
