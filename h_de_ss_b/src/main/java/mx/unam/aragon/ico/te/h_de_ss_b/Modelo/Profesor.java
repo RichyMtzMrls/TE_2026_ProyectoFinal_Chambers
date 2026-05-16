@@ -10,10 +10,6 @@ import java.util.List;
 @NoArgsConstructor
 public class Profesor {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id; 
-
     @Column(nullable = false, length = 100)
     private String nombre;
 
@@ -23,6 +19,7 @@ public class Profesor {
     @Column(name = "apellido_materno", length = 100)
     private String apellidoMaterno;
 
+    @Id
     @Column(name = "numero_trabajador", nullable = false, unique = true, length = 20)
     private String numeroTrabajador;
 

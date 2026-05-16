@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   db:
     image: mariadb:10.11
@@ -9,11 +7,18 @@ services:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: servicio_social_db
       MYSQL_USER: admin_bd
-      MYSQL_PASSWORD: 1379
+      MYSQL_PASSWORD: root
     ports:
       - "3306:3306"
     volumes:
       - mariadb_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+
   backend-api:
     build: ./h_de_ss_b
     container_name: api_servicio_social
@@ -21,14 +26,16 @@ services:
     ports:
       - "8080:8080"
     depends_on:
-      - db
+      db:
+        condition: service_healthy
     environment:
       - SPRING_DATASOURCE_URL=jdbc:mariadb://db:3306/servicio_social_db
       - SPRING_DATASOURCE_USERNAME=admin_bd
-      - SPRING_DATASOURCE_PASSWORD=1379
+      - SPRING_DATASOURCE_PASSWORD=root
       - SPRING_JPA_HIBERNATE_DDL_AUTO=update
       - SPRING_SECURITY_USER_NAME=admin
       - SPRING_SECURITY_USER_PASSWORD=admin123
+
   frontend-mvc:
     build: ./h_de_ss_f
     container_name: web_servicio_social

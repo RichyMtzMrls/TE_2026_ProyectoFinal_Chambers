@@ -26,7 +26,7 @@ public class RegistroHorasService {
         long minutosTrabajados = calcularYValidarMinutos(registro.getHoraEntrada(), registro.getHoraSalida());
         registro.setHorasCalculadas(formatearMinutosAHora(minutosTrabajados));
         registro.setEstadoRegistro("CERRADO");
-        actualizarHorasAlumno(registro.getAlumno().getId(), minutosTrabajados);
+        actualizarHorasAlumno(registro.getAlumno().getNumeroCuenta(), minutosTrabajados);
         return registroRepository.save(registro);
     }
 
@@ -51,7 +51,7 @@ public class RegistroHorasService {
         long minutosTrabajados = calcularYValidarMinutos(registro.getHoraEntrada(), horaSalida);
         registro.setHorasCalculadas(formatearMinutosAHora(minutosTrabajados));
         registro.setEstadoRegistro("CERRADO");
-        actualizarHorasAlumno(registro.getAlumno().getId(), minutosTrabajados);
+        actualizarHorasAlumno(registro.getAlumno().getNumeroCuenta(), minutosTrabajados);
         return registroRepository.save(registro);
     }
 
@@ -80,7 +80,7 @@ public class RegistroHorasService {
         return String.format("%d:%02d", horas, minutosRestantes);
     }
 
-    private void actualizarHorasAlumno(Long idAlumno, long nuevosMinutos) {
+    private void actualizarHorasAlumno(long idAlumno, long nuevosMinutos) {
         Alumno alumno = alumnoRepository.findById(idAlumno)
                 .orElseThrow(() -> new RuntimeException("Alumno no encontrado"));
         long minutosActuales = 0;

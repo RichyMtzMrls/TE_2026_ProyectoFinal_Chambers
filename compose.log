@@ -1,0 +1,390 @@
+ Image te_2026_proyectofinal_chambers-backend-api Building 
+ Image te_2026_proyectofinal_chambers-frontend-mvc Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 1.23kB done
+#1 DONE 0.0s
+
+#2 [backend-api internal] load build definition from dockerfile
+#2 transferring dockerfile: 443B done
+#2 DONE 0.1s
+
+#3 [frontend-mvc internal] load build definition from dockerfile
+#3 transferring dockerfile: 443B done
+#3 DONE 0.1s
+
+#4 [frontend-mvc internal] load metadata for docker.io/library/eclipse-temurin:17-jdk-alpine
+#4 DONE 0.6s
+
+#5 [frontend-mvc internal] load metadata for docker.io/library/eclipse-temurin:17-jre-alpine
+#5 DONE 0.6s
+
+#6 [backend-api internal] load .dockerignore
+#6 transferring context: 2B 0.0s done
+#6 DONE 0.1s
+
+#7 [frontend-mvc internal] load .dockerignore
+#7 transferring context: 2B done
+#7 DONE 0.1s
+
+#8 [backend-api internal] load build context
+#8 DONE 0.0s
+
+#9 [frontend-mvc internal] load build context
+#9 DONE 0.0s
+
+#10 [frontend-mvc stage-1 1/3] FROM docker.io/library/eclipse-temurin:17-jre-alpine@sha256:b0ae54a36f82e04dc6c45e40ca5c55762e20b9a0858ee457faf557d440a9b571
+#10 resolve docker.io/library/eclipse-temurin:17-jre-alpine@sha256:b0ae54a36f82e04dc6c45e40ca5c55762e20b9a0858ee457faf557d440a9b571
+#10 resolve docker.io/library/eclipse-temurin:17-jre-alpine@sha256:b0ae54a36f82e04dc6c45e40ca5c55762e20b9a0858ee457faf557d440a9b571 0.2s done
+#10 DONE 0.2s
+
+#11 [backend-api build 1/9] FROM docker.io/library/eclipse-temurin:17-jdk-alpine@sha256:5d14725f0e49e19df217f6ce179039f01ca25f5f9aa958573b467312599ca246
+#11 resolve docker.io/library/eclipse-temurin:17-jdk-alpine@sha256:5d14725f0e49e19df217f6ce179039f01ca25f5f9aa958573b467312599ca246 0.2s done
+#11 DONE 0.2s
+
+#8 [backend-api internal] load build context
+#8 transferring context: 5.61kB 0.0s done
+#8 DONE 0.1s
+
+#9 [frontend-mvc internal] load build context
+#9 transferring context: 2.72kB 0.0s done
+#9 DONE 0.1s
+
+#12 [frontend-mvc build 5/9] COPY pom.xml .
+#12 CACHED
+
+#13 [frontend-mvc build 6/9] RUN chmod +x ./mvnw
+#13 CACHED
+
+#14 [frontend-mvc build 9/9] RUN ./mvnw clean package -DskipTests
+#14 CACHED
+
+#15 [frontend-mvc build 7/9] RUN ./mvnw dependency:go-offline
+#15 CACHED
+
+#16 [frontend-mvc build 8/9] COPY src src
+#16 CACHED
+
+#17 [frontend-mvc build 4/9] COPY .mvn .mvn
+#17 CACHED
+
+#18 [frontend-mvc build 3/9] COPY mvnw .
+#18 CACHED
+
+#19 [frontend-mvc stage-1 3/3] COPY --from=build /app/target/*.jar app.jar
+#19 CACHED
+
+#20 [backend-api build 5/9] COPY pom.xml .
+#20 CACHED
+
+#21 [backend-api build 3/9] COPY mvnw .
+#21 CACHED
+
+#22 [backend-api build 6/9] RUN chmod +x ./mvnw
+#22 CACHED
+
+#23 [backend-api build 9/9] RUN ./mvnw clean package -DskipTests
+#23 CACHED
+
+#24 [backend-api build 8/9] COPY src src
+#24 CACHED
+
+#25 [frontend-mvc build 2/9] WORKDIR /app
+#25 CACHED
+
+#26 [backend-api build 7/9] RUN ./mvnw dependency:go-offline
+#26 CACHED
+
+#27 [backend-api build 4/9] COPY .mvn .mvn
+#27 CACHED
+
+#28 [frontend-mvc stage-1 2/3] WORKDIR /app
+#28 CACHED
+
+#29 [backend-api stage-1 3/3] COPY --from=build /app/target/*.jar app.jar
+#29 CACHED
+
+#30 [frontend-mvc] exporting to image
+#30 exporting layers 0.0s done
+#30 exporting manifest sha256:575904789de6c3cfedcb8abfb5ae26aedb2325dabb33cef9fca021e595d393c5 0.0s done
+#30 exporting config sha256:9607ec804619f736a37d96eda235be5d1b237aa08e84a3ec22cade8a68183609 0.0s done
+#30 exporting attestation manifest sha256:4104a63ddd6ba202df127d832404ad0d0961fe5fd80ba47841bee0278ab76b15
+#30 exporting attestation manifest sha256:4104a63ddd6ba202df127d832404ad0d0961fe5fd80ba47841bee0278ab76b15 0.3s done
+#30 exporting manifest list sha256:b1b214b86dfd01a8ba301bb66188f70a97777edc7bd53a4440650b478382d753
+#30 exporting manifest list sha256:b1b214b86dfd01a8ba301bb66188f70a97777edc7bd53a4440650b478382d753 0.1s done
+#30 naming to docker.io/library/te_2026_proyectofinal_chambers-frontend-mvc:latest
+#30 naming to docker.io/library/te_2026_proyectofinal_chambers-frontend-mvc:latest 0.1s done
+#30 unpacking to docker.io/library/te_2026_proyectofinal_chambers-frontend-mvc:latest 0.1s done
+#30 DONE 1.0s
+
+#31 [backend-api] exporting to image
+#31 exporting layers 0.0s done
+#31 exporting manifest sha256:ac9c9bfd0491a69360ec2068cf805714216cacb162e4da3631b3bfacf1da467a 0.0s done
+#31 exporting config sha256:42cc2ab0c9c9178f88f63ba1e3c3e91f1572078a32383a57a1280c21ab354a1c 0.1s done
+#31 exporting attestation manifest sha256:413183ba7f6b1847c41faa4747055a743a164d89aaacf022be1e020a48d77a79 0.3s done
+#31 exporting manifest list sha256:54e2d4c8dede21d0e76590cd9f2ea01a5a7d2156025b4151090ad4a753c505f9 0.2s done
+#31 naming to docker.io/library/te_2026_proyectofinal_chambers-backend-api:latest 0.1s done
+#31 unpacking to docker.io/library/te_2026_proyectofinal_chambers-backend-api:latest 0.1s done
+#31 DONE 1.0s
+
+#32 [frontend-mvc] resolving provenance for metadata file
+#32 DONE 0.1s
+
+#33 [backend-api] resolving provenance for metadata file
+#33 DONE 0.0s
+ Image te_2026_proyectofinal_chambers-backend-api Built 
+ Image te_2026_proyectofinal_chambers-frontend-mvc Built 
+ Container api_servicio_social Recreate 
+ Container api_servicio_social Recreated 
+ Container web_servicio_social Recreate 
+ Container web_servicio_social Recreated 
+Attaching to api_servicio_social, db_servicio_social, web_servicio_social
+ Container db_servicio_social Starting 
+db_servicio_social  | 2026-05-16 06:16:39+00:00 [Note] [Entrypoint]: Entrypoint script for MariaDB Server 1:10.11.16+maria~ubu2204 started.
+ Container db_servicio_social Started 
+ Container db_servicio_social Waiting 
+db_servicio_social  | 2026-05-16 06:16:39+00:00 [Warn] [Entrypoint]: /sys/fs/cgroup///memory.pressure not writable, functionality unavailable to MariaDB
+db_servicio_social  | 2026-05-16 06:16:39+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
+db_servicio_social  | 2026-05-16 06:16:39+00:00 [Note] [Entrypoint]: Entrypoint script for MariaDB Server 1:10.11.16+maria~ubu2204 started.
+db_servicio_social  | 2026-05-16 06:16:40+00:00 [Note] [Entrypoint]: MariaDB upgrade not required
+db_servicio_social  | 2026-05-16  6:16:40 0 [Note] Starting MariaDB 10.11.16-MariaDB-ubu2204 source revision 3218602d3100db9ce7a875511a591cddc173cc16 server_uid 02rC/WJ9udKjx50Cdhtw5yc4ur4= as process 1
+db_servicio_social  | 2026-05-16  6:16:40 0 [Note] InnoDB: Compressed tables use zlib 1.2.11
+db_servicio_social  | 2026-05-16  6:16:40 0 [Note] InnoDB: Number of transaction pools: 1
+db_servicio_social  | 2026-05-16  6:16:40 0 [Note] InnoDB: Using crc32 + pclmulqdq instructions
+db_servicio_social  | 2026-05-16  6:16:40 0 [Warning] mariadbd: io_uring_queue_init() failed with EPERM: sysctl kernel.io_uring_disabled has the value 2, or 1 and the user of the process is not a member of sysctl kernel.io_uring_group. (see man 2 io_uring_setup).
+db_servicio_social  | create_uring failed: falling back to libaio
+db_servicio_social  | 2026-05-16  6:16:40 0 [Note] InnoDB: Using Linux native AIO
+db_servicio_social  | 2026-05-16  6:16:40 0 [Note] InnoDB: innodb_buffer_pool_size_max=128m, innodb_buffer_pool_size=128m
+db_servicio_social  | 2026-05-16  6:16:40 0 [Note] InnoDB: Completed initialization of buffer pool
+db_servicio_social  | 2026-05-16  6:16:40 0 [Note] InnoDB: File system buffers for log disabled (block size=512 bytes)
+db_servicio_social  | 2026-05-16  6:16:40 0 [Note] InnoDB: End of log at LSN=131573
+db_servicio_social  | 2026-05-16  6:16:40 0 [Note] InnoDB: 128 rollback segments are active.
+db_servicio_social  | 2026-05-16  6:16:40 0 [Note] InnoDB: Setting file './ibtmp1' size to 12.000MiB. Physically writing the file full; Please wait ...
+db_servicio_social  | 2026-05-16  6:16:40 0 [Note] InnoDB: File './ibtmp1' size is now 12.000MiB.
+db_servicio_social  | 2026-05-16  6:16:40 0 [Note] InnoDB: log sequence number 131573; transaction id 104
+db_servicio_social  | 2026-05-16  6:16:40 0 [Note] Plugin 'FEEDBACK' is disabled.
+db_servicio_social  | 2026-05-16  6:16:40 0 [Note] InnoDB: Loading buffer pool(s) from /var/lib/mysql/ib_buffer_pool
+db_servicio_social  | 2026-05-16  6:16:40 0 [Warning] You need to use --log-bin to make --expire-logs-days or --binlog-expire-logs-seconds work.
+db_servicio_social  | 2026-05-16  6:16:40 0 [Note] Server socket created on IP: '0.0.0.0', port: '3306'.
+db_servicio_social  | 2026-05-16  6:16:40 0 [Note] Server socket created on IP: '::', port: '3306'.
+db_servicio_social  | 2026-05-16  6:16:40 0 [Note] InnoDB: Buffer pool(s) load completed at 260516  6:16:40
+db_servicio_social  | 2026-05-16  6:16:40 0 [Note] mariadbd: ready for connections.
+db_servicio_social  | Version: '10.11.16-MariaDB-ubu2204'  socket: '/run/mysqld/mysqld.sock'  port: 3306  mariadb.org binary distribution
+ Container db_servicio_social Healthy 
+ Container api_servicio_social Starting 
+ Container api_servicio_social Started 
+ Container web_servicio_social Starting 
+ Container web_servicio_social Started 
+api_servicio_social  | 
+api_servicio_social  |   .   ____          _            __ _ _
+api_servicio_social  |  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+api_servicio_social  | ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+api_servicio_social  |  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+api_servicio_social  |   '  |____| .__|_| |_|_| |_\__, | / / / /
+api_servicio_social  |  =========|_|==============|___/=/_/_/_/
+api_servicio_social  | 
+api_servicio_social  |  :: Spring Boot ::                (v4.0.6)
+api_servicio_social  | 
+web_servicio_social  | 
+web_servicio_social  |   .   ____          _            __ _ _
+web_servicio_social  |  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+web_servicio_social  | ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+web_servicio_social  |  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+web_servicio_social  |   '  |____| .__|_| |_|_| |_\__, | / / / /
+web_servicio_social  |  =========|_|==============|___/=/_/_/_/
+web_servicio_social  | 
+web_servicio_social  |  :: Spring Boot ::                (v4.0.6)
+web_servicio_social  | 
+web_servicio_social  | 2026-05-16T06:16:48.765Z  INFO 1 --- [h_de_ss_f] [           main] m.u.a.i.te.h_de_ss_f.HDeSsFApplication   : Starting HDeSsFApplication v0.0.1-SNAPSHOT using Java 17.0.19 with PID 1 (/app/app.jar started by root in /app)
+web_servicio_social  | 2026-05-16T06:16:48.778Z  INFO 1 --- [h_de_ss_f] [           main] m.u.a.i.te.h_de_ss_f.HDeSsFApplication   : No active profile set, falling back to 1 default profile: "default"
+api_servicio_social  | 2026-05-16T06:16:48.770Z  INFO 1 --- [           main] m.u.a.i.te.h_de_ss_b.HDeSsBApplication   : Starting HDeSsBApplication v0.0.1-SNAPSHOT using Java 17.0.19 with PID 1 (/app/app.jar started by root in /app)
+api_servicio_social  | 2026-05-16T06:16:48.794Z  INFO 1 --- [           main] m.u.a.i.te.h_de_ss_b.HDeSsBApplication   : No active profile set, falling back to 1 default profile: "default"
+api_servicio_social  | 2026-05-16T06:16:50.948Z  INFO 1 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+api_servicio_social  | 2026-05-16T06:16:51.120Z  INFO 1 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 138 ms. Found 4 JPA repository interfaces.
+web_servicio_social  | 2026-05-16T06:16:51.399Z  INFO 1 --- [h_de_ss_f] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+web_servicio_social  | 2026-05-16T06:16:51.434Z  INFO 1 --- [h_de_ss_f] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+web_servicio_social  | 2026-05-16T06:16:51.440Z  INFO 1 --- [h_de_ss_f] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+web_servicio_social  | 2026-05-16T06:16:51.520Z  INFO 1 --- [h_de_ss_f] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 2526 ms
+web_servicio_social  | 2026-05-16T06:16:52.490Z  WARN 1 --- [h_de_ss_f] [           main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+api_servicio_social  | 2026-05-16T06:16:52.559Z  INFO 1 --- [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+api_servicio_social  | 2026-05-16T06:16:52.604Z  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+api_servicio_social  | 2026-05-16T06:16:52.605Z  INFO 1 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+web_servicio_social  | 2026-05-16T06:16:52.615Z  WARN 1 --- [h_de_ss_f] [           main] .s.a.UserDetailsServiceAutoConfiguration : 
+web_servicio_social  | 
+web_servicio_social  | Using generated security password: 835cd8fb-dd94-49ec-83d9-21e9d11d61d2
+web_servicio_social  | 
+web_servicio_social  | This generated password is for development use only. Your security configuration must be updated before running your application in production.
+web_servicio_social  | 
+api_servicio_social  | 2026-05-16T06:16:52.676Z  INFO 1 --- [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 3648 ms
+web_servicio_social  | 2026-05-16T06:16:52.712Z  INFO 1 --- [h_de_ss_f] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+api_servicio_social  | 2026-05-16T06:16:53.265Z  INFO 1 --- [           main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+web_servicio_social  | 2026-05-16T06:16:53.300Z  INFO 1 --- [h_de_ss_f] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+web_servicio_social  | 2026-05-16T06:16:53.354Z  INFO 1 --- [h_de_ss_f] [           main] m.u.a.i.te.h_de_ss_f.HDeSsFApplication   : Started HDeSsFApplication in 5.871 seconds (process running for 7.078)
+api_servicio_social  | 2026-05-16T06:16:53.448Z  INFO 1 --- [           main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
+api_servicio_social  | 2026-05-16T06:16:54.578Z  INFO 1 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+api_servicio_social  | 2026-05-16T06:16:54.648Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+db_servicio_social   | 2026-05-16  6:16:54 7 [Warning] Access denied for user 'admin_bd'@'172.20.0.3' (using password: YES)
+api_servicio_social  | 2026-05-16T06:16:54.801Z  WARN 1 --- [           main] o.m.jdbc.message.server.ErrorPacket      : Error: 1045-28000: Access denied for user 'admin_bd'@'172.20.0.3' (using password: YES)
+api_servicio_social  | 2026-05-16T06:16:55.809Z  WARN 1 --- [           main] org.hibernate.orm.jdbc.error             : HHH000247: ErrorCode: 1045, SQLState: 28000
+api_servicio_social  | 2026-05-16T06:16:55.809Z  WARN 1 --- [           main] org.hibernate.orm.jdbc.error             : (conn=7) Access denied for user 'admin_bd'@'172.20.0.3' (using password: YES)
+api_servicio_social  | 2026-05-16T06:16:55.812Z  WARN 1 --- [           main] org.hibernate.orm.jdbc                   : HHH100046: Could not obtain connection to query JDBC database metadata
+api_servicio_social  | 
+api_servicio_social  | org.hibernate.exception.AuthException: Unable to obtain isolated JDBC connection [(conn=7) Access denied for user 'admin_bd'@'172.20.0.3' (using password: YES)] [n/a]
+api_servicio_social  | 	at org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:87) ~[hibernate-core-7.2.12.Final.jar!/:7.2.12.Final]
+api_servicio_social  | 	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:34) ~[hibernate-core-7.2.12.Final.jar!/:7.2.12.Final]
+api_servicio_social  | 	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:115) ~[hibernate-core-7.2.12.Final.jar!/:7.2.12.Final]
+api_servicio_social  | 	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:101) ~[hibernate-core-7.2.12.Final.jar!/:7.2.12.Final]
+api_servicio_social  | 	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:51) ~[hibernate-core-7.2.12.Final.jar!/:7.2.12.Final]
+api_servicio_social  | 	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:366) ~[hibernate-core-7.2.12.Final.jar!/:7.2.12.Final]
+api_servicio_social  | 	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironment(JdbcEnvironmentInitiator.java:143) ~[hibernate-core-7.2.12.Final.jar!/:7.2.12.Final]
+api_servicio_social  | 	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:120) ~[hibernate-core-7.2.12.Final.jar!/:7.2.12.Final]
+api_servicio_social  | 	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:80) ~[hibernate-core-7.2.12.Final.jar!/:7.2.12.Final]
+api_servicio_social  | 	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:133) ~[hibernate-core-7.2.12.Final.jar!/:7.2.12.Final]
+api_servicio_social  | 	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:260) ~[hibernate-core-7.2.12.Final.jar!/:7.2.12.Final]
+api_servicio_social  | 	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:235) ~[hibernate-core-7.2.12.Final.jar!/:7.2.12.Final]
+api_servicio_social  | 	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:212) ~[hibernate-core-7.2.12.Final.jar!/:7.2.12.Final]
+api_servicio_social  | 	at org.hibernate.boot.model.relational.Database.<init>(Database.java:44) ~[hibernate-core-7.2.12.Final.jar!/:7.2.12.Final]
+api_servicio_social  | 	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:251) ~[hibernate-core-7.2.12.Final.jar!/:7.2.12.Final]
+api_servicio_social  | 	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:203) ~[hibernate-core-7.2.12.Final.jar!/:7.2.12.Final]
+api_servicio_social  | 	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:172) ~[hibernate-core-7.2.12.Final.jar!/:7.2.12.Final]
+api_servicio_social  | 	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1392) ~[hibernate-core-7.2.12.Final.jar!/:7.2.12.Final]
+api_servicio_social  | 	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.populateSessionFactoryBuilder(EntityManagerFactoryBuilderImpl.java:1472) ~[hibernate-core-7.2.12.Final.jar!/:7.2.12.Final]
+api_servicio_social  | 	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1454) ~[hibernate-core-7.2.12.Final.jar!/:7.2.12.Final]
+api_servicio_social  | 	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:93) ~[spring-orm-7.0.7.jar!/:7.0.7]
+api_servicio_social  | 	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:443) ~[spring-orm-7.0.7.jar!/:7.0.7]
+api_servicio_social  | 	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:436) ~[spring-orm-7.0.7.jar!/:7.0.7]
+api_servicio_social  | 	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:411) ~[spring-orm-7.0.7.jar!/:7.0.7]
+api_servicio_social  | 	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:419) ~[spring-orm-7.0.7.jar!/:7.0.7]
+api_servicio_social  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1864) ~[spring-beans-7.0.7.jar!/:7.0.7]
+api_servicio_social  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1813) ~[spring-beans-7.0.7.jar!/:7.0.7]
+api_servicio_social  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:603) ~[spring-beans-7.0.7.jar!/:7.0.7]
+api_servicio_social  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.7.jar!/:7.0.7]
+api_servicio_social  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.7.jar!/:7.0.7]
+api_servicio_social  | 	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.7.jar!/:7.0.7]
+api_servicio_social  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.7.jar!/:7.0.7]
+api_servicio_social  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201) ~[spring-beans-7.0.7.jar!/:7.0.7]
+api_servicio_social  | 	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:977) ~[spring-context-7.0.7.jar!/:7.0.7]
+api_servicio_social  | 	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:621) ~[spring-context-7.0.7.jar!/:7.0.7]
+api_servicio_social  | 	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-web-server-4.0.6.jar!/:4.0.6]
+api_servicio_social  | 	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756) ~[spring-boot-4.0.6.jar!/:4.0.6]
+api_servicio_social  | 	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445) ~[spring-boot-4.0.6.jar!/:4.0.6]
+api_servicio_social  | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321) ~[spring-boot-4.0.6.jar!/:4.0.6]
+api_servicio_social  | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365) ~[spring-boot-4.0.6.jar!/:4.0.6]
+api_servicio_social  | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-4.0.6.jar!/:4.0.6]
+api_servicio_social  | 	at mx.unam.aragon.ico.te.h_de_ss_b.HDeSsBApplication.main(HDeSsBApplication.java:10) ~[!/:0.0.1-SNAPSHOT]
+api_servicio_social  | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+api_servicio_social  | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:na]
+api_servicio_social  | 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:na]
+api_servicio_social  | 	at java.base/java.lang.reflect.Method.invoke(Unknown Source) ~[na:na]
+api_servicio_social  | 	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:106) ~[app.jar:0.0.1-SNAPSHOT]
+api_servicio_social  | 	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:64) ~[app.jar:0.0.1-SNAPSHOT]
+api_servicio_social  | 	at org.springframework.boot.loader.launch.JarLauncher.main(JarLauncher.java:40) ~[app.jar:0.0.1-SNAPSHOT]
+api_servicio_social  | Caused by: java.sql.SQLInvalidAuthorizationSpecException: (conn=7) Access denied for user 'admin_bd'@'172.20.0.3' (using password: YES)
+api_servicio_social  | 	at org.mariadb.jdbc.export.ExceptionFactory.createException(ExceptionFactory.java:313) ~[mariadb-java-client-3.5.8.jar!/:na]
+api_servicio_social  | 	at org.mariadb.jdbc.export.ExceptionFactory.create(ExceptionFactory.java:402) ~[mariadb-java-client-3.5.8.jar!/:na]
+api_servicio_social  | 	at org.mariadb.jdbc.client.impl.StandardClient.authenticationHandler(StandardClient.java:513) ~[mariadb-java-client-3.5.8.jar!/:na]
+api_servicio_social  | 	at org.mariadb.jdbc.client.impl.StandardClient.handleAuthentication(StandardClient.java:395) ~[mariadb-java-client-3.5.8.jar!/:na]
+api_servicio_social  | 	at org.mariadb.jdbc.client.impl.StandardClient.setupConnection(StandardClient.java:189) ~[mariadb-java-client-3.5.8.jar!/:na]
+api_servicio_social  | 	at org.mariadb.jdbc.client.impl.StandardClient.<init>(StandardClient.java:157) ~[mariadb-java-client-3.5.8.jar!/:na]
+api_servicio_social  | 	at org.mariadb.jdbc.Driver.connect(Driver.java:75) ~[mariadb-java-client-3.5.8.jar!/:na]
+api_servicio_social  | 	at org.mariadb.jdbc.Driver.connect(Driver.java:104) ~[mariadb-java-client-3.5.8.jar!/:na]
+api_servicio_social  | 	at org.mariadb.jdbc.Driver.connect(Driver.java:29) ~[mariadb-java-client-3.5.8.jar!/:na]
+api_servicio_social  | 	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144) ~[HikariCP-7.0.2.jar!/:na]
+api_servicio_social  | 	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:373) ~[HikariCP-7.0.2.jar!/:na]
+api_servicio_social  | 	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:210) ~[HikariCP-7.0.2.jar!/:na]
+api_servicio_social  | 	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488) ~[HikariCP-7.0.2.jar!/:na]
+api_servicio_social  | 	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:576) ~[HikariCP-7.0.2.jar!/:na]
+api_servicio_social  | 	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:97) ~[HikariCP-7.0.2.jar!/:na]
+api_servicio_social  | 	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111) ~[HikariCP-7.0.2.jar!/:na]
+api_servicio_social  | 	at org.hibernate.engine.jdbc.connections.internal.DataSourceConnectionProvider.getConnection(DataSourceConnectionProvider.java:137) ~[hibernate-core-7.2.12.Final.jar!/:7.2.12.Final]
+api_servicio_social  | 	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:508) ~[hibernate-core-7.2.12.Final.jar!/:7.2.12.Final]
+api_servicio_social  | 	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:48) ~[hibernate-core-7.2.12.Final.jar!/:7.2.12.Final]
+api_servicio_social  | 	... 44 common frames omitted
+api_servicio_social  | 
+api_servicio_social  | 2026-05-16T06:16:55.842Z ERROR 1 --- [           main] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment] due to: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
+api_servicio_social  | 2026-05-16T06:16:55.845Z  WARN 1 --- [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/hibernate/autoconfigure/HibernateJpaConfiguration.class]: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment] due to: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
+api_servicio_social  | 2026-05-16T06:16:55.861Z  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+api_servicio_social  | 2026-05-16T06:16:55.898Z  INFO 1 --- [           main] .s.b.a.l.ConditionEvaluationReportLogger : 
+api_servicio_social  | 
+api_servicio_social  | Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+api_servicio_social  | 2026-05-16T06:16:55.978Z ERROR 1 --- [           main] o.s.boot.SpringApplication               : Application run failed
+api_servicio_social  | 
+api_servicio_social  | org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/hibernate/autoconfigure/HibernateJpaConfiguration.class]: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment] due to: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
+api_servicio_social  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1817) ~[spring-beans-7.0.7.jar!/:7.0.7]
+api_servicio_social  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:603) ~[spring-beans-7.0.7.jar!/:7.0.7]
+api_servicio_social  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.7.jar!/:7.0.7]
+api_servicio_social  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.7.jar!/:7.0.7]
+api_servicio_social  | 	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.7.jar!/:7.0.7]
+api_servicio_social  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.7.jar!/:7.0.7]
+api_servicio_social  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201) ~[spring-beans-7.0.7.jar!/:7.0.7]
+api_servicio_social  | 	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:977) ~[spring-context-7.0.7.jar!/:7.0.7]
+api_servicio_social  | 	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:621) ~[spring-context-7.0.7.jar!/:7.0.7]
+api_servicio_social  | 	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-web-server-4.0.6.jar!/:4.0.6]
+api_servicio_social  | 	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756) ~[spring-boot-4.0.6.jar!/:4.0.6]
+api_servicio_social  | 	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445) ~[spring-boot-4.0.6.jar!/:4.0.6]
+api_servicio_social  | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321) ~[spring-boot-4.0.6.jar!/:4.0.6]
+api_servicio_social  | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365) ~[spring-boot-4.0.6.jar!/:4.0.6]
+api_servicio_social  | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-4.0.6.jar!/:4.0.6]
+api_servicio_social  | 	at mx.unam.aragon.ico.te.h_de_ss_b.HDeSsBApplication.main(HDeSsBApplication.java:10) ~[!/:0.0.1-SNAPSHOT]
+api_servicio_social  | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+api_servicio_social  | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:na]
+api_servicio_social  | 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:na]
+api_servicio_social  | 	at java.base/java.lang.reflect.Method.invoke(Unknown Source) ~[na:na]
+api_servicio_social  | 	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:106) ~[app.jar:0.0.1-SNAPSHOT]
+api_servicio_social  | 	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:64) ~[app.jar:0.0.1-SNAPSHOT]
+api_servicio_social  | 	at org.springframework.boot.loader.launch.JarLauncher.main(JarLauncher.java:40) ~[app.jar:0.0.1-SNAPSHOT]
+api_servicio_social  | Caused by: org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment] due to: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
+api_servicio_social  | 	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:273) ~[hibernate-core-7.2.12.Final.jar!/:7.2.12.Final]
+api_servicio_social  | 	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:235) ~[hibernate-core-7.2.12.Final.jar!/:7.2.12.Final]
+api_servicio_social  | 	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:212) ~[hibernate-core-7.2.12.Final.jar!/:7.2.12.Final]
+api_servicio_social  | 	at org.hibernate.boot.model.relational.Database.<init>(Database.java:44) ~[hibernate-core-7.2.12.Final.jar!/:7.2.12.Final]
+api_servicio_social  | 	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:251) ~[hibernate-core-7.2.12.Final.jar!/:7.2.12.Final]
+api_servicio_social  | 	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:203) ~[hibernate-core-7.2.12.Final.jar!/:7.2.12.Final]
+api_servicio_social  | 	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:172) ~[hibernate-core-7.2.12.Final.jar!/:7.2.12.Final]
+api_servicio_social  | 	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1392) ~[hibernate-core-7.2.12.Final.jar!/:7.2.12.Final]
+api_servicio_social  | 	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.populateSessionFactoryBuilder(EntityManagerFactoryBuilderImpl.java:1472) ~[hibernate-core-7.2.12.Final.jar!/:7.2.12.Final]
+api_servicio_social  | 	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1454) ~[hibernate-core-7.2.12.Final.jar!/:7.2.12.Final]
+api_servicio_social  | 	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:93) ~[spring-orm-7.0.7.jar!/:7.0.7]
+api_servicio_social  | 	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:443) ~[spring-orm-7.0.7.jar!/:7.0.7]
+api_servicio_social  | 	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:436) ~[spring-orm-7.0.7.jar!/:7.0.7]
+api_servicio_social  | 	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:411) ~[spring-orm-7.0.7.jar!/:7.0.7]
+api_servicio_social  | 	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:419) ~[spring-orm-7.0.7.jar!/:7.0.7]
+api_servicio_social  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1864) ~[spring-beans-7.0.7.jar!/:7.0.7]
+api_servicio_social  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1813) ~[spring-beans-7.0.7.jar!/:7.0.7]
+api_servicio_social  | 	... 22 common frames omitted
+api_servicio_social  | Caused by: org.hibernate.HibernateException: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
+api_servicio_social  | 	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.determineDialect(DialectFactoryImpl.java:190) ~[hibernate-core-7.2.12.Final.jar!/:7.2.12.Final]
+api_servicio_social  | 	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.buildDialect(DialectFactoryImpl.java:86) ~[hibernate-core-7.2.12.Final.jar!/:7.2.12.Final]
+api_servicio_social  | 	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentWithDefaults(JdbcEnvironmentInitiator.java:200) ~[hibernate-core-7.2.12.Final.jar!/:7.2.12.Final]
+api_servicio_social  | 	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:452) ~[hibernate-core-7.2.12.Final.jar!/:7.2.12.Final]
+api_servicio_social  | 	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironment(JdbcEnvironmentInitiator.java:143) ~[hibernate-core-7.2.12.Final.jar!/:7.2.12.Final]
+api_servicio_social  | 	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:120) ~[hibernate-core-7.2.12.Final.jar!/:7.2.12.Final]
+api_servicio_social  | 	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:80) ~[hibernate-core-7.2.12.Final.jar!/:7.2.12.Final]
+api_servicio_social  | 	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:133) ~[hibernate-core-7.2.12.Final.jar!/:7.2.12.Final]
+api_servicio_social  | 	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:260) ~[hibernate-core-7.2.12.Final.jar!/:7.2.12.Final]
+api_servicio_social  | 	... 38 common frames omitted
+api_servicio_social  | 
+[Kapi_servicio_social exited with code 1 (restarting)
+api_servicio_social  | 
+api_servicio_social  |   .   ____          _            __ _ _
+api_servicio_social  |  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+api_servicio_social  | ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+api_servicio_social  |  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+api_servicio_social  |   '  |____| .__|_| |_|_| |_\__, | / / / /
+api_servicio_social  |  =========|_|==============|___/=/_/_/_/
+api_servicio_social  | 
+api_servicio_social  |  :: Spring Boot ::                (v4.0.6)
+api_servicio_social  | 
+api_servicio_social  | 2026-05-16T06:16:59.180Z  INFO 1 --- [           main] m.u.a.i.te.h_de_ss_b.HDeSsBApplication   : Starting HDeSsBApplication v0.0.1-SNAPSHOT using Java 17.0.19 with PID 1 (/app/app.jar started by root in /app)
+api_servicio_social  | 2026-05-16T06:16:59.188Z  INFO 1 --- [           main] m.u.a.i.te.h_de_ss_b.HDeSsBApplication   : No active profile set, falling back to 1 default profile: "default"
+api_servicio_social  | 2026-05-16T06:17:00.517Z  INFO 1 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+api_servicio_social  | 2026-05-16T06:17:00.733Z  INFO 1 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 192 ms. Found 4 JPA repository interfaces.
+api_servicio_social  | 2026-05-16T06:17:01.807Z  INFO 1 --- [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+api_servicio_social  | 2026-05-16T06:17:01.835Z  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+api_servicio_social  | 2026-05-16T06:17:01.836Z  INFO 1 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+api_servicio_social  | 2026-05-16T06:17:01.902Z  INFO 1 --- [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 2596 ms
+api_servicio_social  | 2026-05-16T06:17:02.211Z  INFO 1 --- [           main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+api_servicio_social  | 2026-05-16T06:17:02.308Z  INFO 1 --- [           main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
+api_servicio_social  | 2026-05-16T06:17:03.171Z  INFO 1 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+api_servicio_social  | 2026-05-16T06:17:03.239Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+db_servicio_social   | 2026-05-16  6:17:03 12 [Warning] Access denied for user 'admin_bd'@'172.20.0.3' (using password: YES)
+api_servicio_social  | 2026-05-16T06:17:03.411Z  WARN 1 --- [           main] o.m.jdbc.message.server.ErrorPacket      : Error: 1045-28000: Access denied for user 'admin_bd'@'172.20.0.3' (using password: YES)

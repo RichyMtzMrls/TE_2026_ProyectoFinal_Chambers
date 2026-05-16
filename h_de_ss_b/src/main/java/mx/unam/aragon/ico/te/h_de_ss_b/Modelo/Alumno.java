@@ -9,10 +9,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Alumno {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
     @Column(nullable = false, length = 100)
     private String nombre; 
 
@@ -22,8 +18,9 @@ public class Alumno {
     @Column(name = "apellido_materno", length = 100)
     private String apellidoMaterno; 
 
+    @Id
     @Column(name = "numero_cuenta", nullable = false, unique = true, length = 10)
-    private String numeroCuenta; 
+    private long numeroCuenta;
 
     @Column(nullable = false)
     private String carrera; 
